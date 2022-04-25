@@ -1,0 +1,32 @@
+{
+  "images": [
+    {
+      "imageFormat": "JPEG",
+      "resolutionWidth": 5000.0,
+      "resolutionHeight": 3863.0,
+      "id": "465b88ec-2ed6-449d-adc9-91bef803610a",
+      "status": "CREATED"
+    },
+    {
+      "imageFormat": "SVG",
+      "resolutionWidth": 792.0,
+      "resolutionHeight": 612.0,
+      "id": "21dde97a-a670-4862-9f69-a7702139a329",
+      "status": "CREATED"
+    },
+    {
+      "imageFormat": "SVG",
+      "resolutionWidth": 792.0,
+      "resolutionHeight": 612.0,
+      "id": "ef8318c8-af54-499a-9d4d-906959082a44",
+      "status": "CREATED"
+    },
+    {
+      "imageFormat": "JPEG",
+      "resolutionWidth": 5000.0,
+      "resolutionHeight": 3863.0,
+      "id": "df35f7af-8a38-452a-bc82-1bcaf54c4283",
+      "status": "CREATED"
+    }
+  ]
+}

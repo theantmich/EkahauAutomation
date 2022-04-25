@@ -1,0 +1,106 @@
+{
+  "networkCapacitySettings": [
+    {
+      "frequencyBand": "TWO",
+      "numberOfSsids": 2,
+      "rtsCtsEnabled": false,
+      "maxAssociatedClientsAmount": 200,
+      "abgRates": [
+        {
+          "rate": "R1",
+          "state": "DISABLED"
+        },
+        {
+          "rate": "R2",
+          "state": "DISABLED"
+        },
+        {
+          "rate": "R5D5",
+          "state": "DISABLED"
+        },
+        {
+          "rate": "R6",
+          "state": "DISABLED"
+        },
+        {
+          "rate": "R9",
+          "state": "DISABLED"
+        },
+        {
+          "rate": "R11",
+          "state": "DISABLED"
+        },
+        {
+          "rate": "R12",
+          "state": "MANDATORY"
+        },
+        {
+          "rate": "R18",
+          "state": "MANDATORY"
+        },
+        {
+          "rate": "R24",
+          "state": "MANDATORY"
+        },
+        {
+          "rate": "R36",
+          "state": "MANDATORY"
+        },
+        {
+          "rate": "R48",
+          "state": "MANDATORY"
+        },
+        {
+          "rate": "R54",
+          "state": "MANDATORY"
+        }
+      ],
+      "bssColoring": false,
+      "id": "8deb70a6-b060-4cde-89eb-d7a1a426350e",
+      "status": "CREATED"
+    },
+    {
+      "frequencyBand": "FIVE",
+      "numberOfSsids": 2,
+      "rtsCtsEnabled": false,
+      "maxAssociatedClientsAmount": 200,
+      "abgRates": [
+        {
+          "rate": "R6",
+          "state": "DISABLED"
+        },
+        {
+          "rate": "R9",
+          "state": "DISABLED"
+        },
+        {
+          "rate": "R12",
+          "state": "MANDATORY"
+        },
+        {
+          "rate": "R18",
+          "state": "MANDATORY"
+        },
+        {
+          "rate": "R24",
+          "state": "MANDATORY"
+        },
+        {
+          "rate": "R36",
+          "state": "MANDATORY"
+        },
+        {
+          "rate": "R48",
+          "state": "MANDATORY"
+        },
+        {
+          "rate": "R54",
+          "state": "MANDATORY"
+        }
+      ],
+      "bssColoring": false,
+      "id": "1fbc4bd8-786d-47a5-9d45-b8bf465e5266",
+      "status": "CREATED"
+    }
+  ]
+}

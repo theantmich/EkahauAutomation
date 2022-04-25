@@ -27,51 +27,53 @@ def main():
         
     with open('project/antennaTypes.json') as antenna:
         antennaJSON = json.load(antenna)
+
+    with open('project/floorPlans.json') as floor:
+        floorJSON = json.load(floor)
     
     with open('BOM_AP.csv', 'w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(["AP_NUMBER", "AP_NAME", "AP_VENDOR", "AP_MODEL", "AP_ANTENNA", "AP_HEIGHT (FT)", "AP_TILT", "AP_MOUNTING"])
+        writer.writerow(["AP_NUMBER", "AP_NAME", "AP_FLOOR", "AP_VENDOR", "AP_MODEL", "AP_ANTENNA", "AP_HEIGHT (FT)", "AP_TILT", "AP_MOUNTING"])
         
         ap_num = 0
         
         for ap in apJSON['accessPoints']:
             for radio in sRadioJSON['simulatedRadios']:
                 for antenna in antennaJSON['antennaTypes']:
-                    if ap['id'] == radio['accessPointId']:
-                        ap_antenna = ""
-                        
-                        ap_height_meter = radio['antennaHeight']
-                        ap_height_feet = round(ap_height_meter * 3.28084,2)
-                        #print(ap_height_feet,ap_height_meter)
-                        
-                        ap_tilt = radio['antennaTilt']
-                        ap_mounting = radio['antennaMounting']
-                        
+                    for floor in floorJSON['floorPlans']:
+                        # Obtention des informations des points d'acces (hauteur, angle et installation)
+                        if ap['id'] == radio['accessPointId']:
+                            
+                            ap_height_meter = radio['antennaHeight']
+                            ap_height_feet = round(ap_height_meter * 3.28084,2)
+                            #print(ap_height_feet,ap_height_meter)
+                            
+                            ap_tilt = radio['antennaTilt']
+                            ap_mounting = radio['antennaMounting']
+                            
+
+                        # Obtention du modele d'antenne (interne/externe)
                         if antenna['id'] == radio['antennaTypeId']:
                         
                             name_validation = antenna['apVendor'] + " " + antenna['apModel']
-                            vendorLength = len(name_validation)
                             
-                            #print(name_validation, antenna['name'])
-                            
-                            if name_validation in antenna['name']: 
-                                if ap['name'] not in ap_list:
-                                    ap_num += 1
-                                
-                                    writer.writerow([ap_num, ap['name'], ap['vendor'], ap['model'], "Internal Antenna", ap_height_feet, ap_tilt, ap_mounting])
-                                    ap_list.append(ap['name'])
-                                    
-                                    #print(ap_list)
+                            if name_validation in antenna['name']:
+                                ap_antenna = "Internal Antenna"
                                 
                             else:
-                                if ap['name'] not in ap_list:
-                                    ap_num += 1
-                                    
-                                    ap_antenna = antenna['name']
-                                    
-                                    writer.writerow([ap_num, ap['name'], ap['vendor'], ap['model'], ap_antenna, ap_height_feet, ap_tilt, ap_mounting])
-                                    ap_list.append(ap['name'])
-                                    
-                                    #print(ap_list)
-                    
+                                ap_antenna = antenna['name']
+
+                        # Obtention du nom d'etage
+                        if ap['location']['floorPlanId'] == floor['id']:
+                            ap_floor = floor['name']
+                            
+
+            #Ecriture des informations dans le document CSV           
+            if ap['name'] not in ap_list:
+                ap_num += 1
+            
+                writer.writerow([ap_num, ap['name'], ap_floor, ap['vendor'], ap['model'], "Internal Antenna", ap_height_feet, ap_tilt, ap_mounting])
+                ap_list.append(ap['name'])
+                #print(ap_list)
+
 main()

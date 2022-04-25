@@ -1,0 +1,1215 @@
+{
+  "requirements": [
+    {
+      "key": "VoicePolycomDualBand",
+      "name": "Polycom Guidelines",
+      "noiseType": "AUTOMATIC",
+      "isDefault": false,
+      "criteria": [
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -60.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -70.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 25.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 11.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 4.0,
+          "additionalLimit": -80.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -60.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -70.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 25.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 11.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 1.0,
+          "additionalLimit": -80.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 200.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.01
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 200.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.01
+        }
+      ],
+      "id": "96890621-5993-4161-9d67-6ff74ff15919",
+      "status": "CREATED"
+    },
+    {
+      "key": "VoiceVocera",
+      "name": "Vocera Best Practices",
+      "noiseType": "AUTOMATIC",
+      "isDefault": false,
+      "criteria": [
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -65.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -75.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 25.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 11.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 4.0,
+          "additionalLimit": -80.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -65.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -75.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 25.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 11.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 1.0,
+          "additionalLimit": -80.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 200.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.02
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 200.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.02
+        }
+      ],
+      "id": "a8be4f50-0614-4b2a-9d9f-d2026e265668",
+      "status": "CREATED"
+    },
+    {
+      "key": "RuckusBestPractices",
+      "name": "Ruckus Best Practices",
+      "noiseType": "AUTOMATIC",
+      "isDefault": false,
+      "criteria": [
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -65.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -75.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 25.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 12.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 2.0,
+          "additionalLimit": -85.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -65.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -75.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 25.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 12.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 1.0,
+          "additionalLimit": -85.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 300.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.02
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 300.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.02
+        }
+      ],
+      "id": "fe586cd2-5c16-4571-a424-13923798b7e6",
+      "status": "CREATED"
+    },
+    {
+      "key": "LocationTracking",
+      "name": "Location Tracking (RTLS)",
+      "noiseType": "AUTOMATIC",
+      "isDefault": false,
+      "criteria": [
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -62.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 7.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 2.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "NUMBER_OF_ACCESS_POINTS",
+          "function": "AT_LEAST",
+          "value": 3.0,
+          "additionalLimit": -75.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 5.0,
+          "additionalLimit": -80.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -62.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 7.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 2.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "NUMBER_OF_ACCESS_POINTS",
+          "function": "AT_LEAST",
+          "value": 3.0,
+          "additionalLimit": -75.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 5.0,
+          "additionalLimit": -80.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 300.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.05
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 300.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.05
+        }
+      ],
+      "id": "f802dc42-32b7-4efc-b2b8-2f3c93103fb9",
+      "status": "CREATED"
+    },
+    {
+      "key": "WIDS-WIPS",
+      "name": "WIPS / WIDS",
+      "noiseType": "AUTOMATIC",
+      "isDefault": false,
+      "criteria": [
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -90.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 2.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 3.0,
+          "additionalLimit": -80.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -90.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 2.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 1.0,
+          "additionalLimit": -80.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 2000.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.5
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 2000.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.5
+        }
+      ],
+      "id": "9b6a28b7-65ba-436d-9dbc-de2326401a43",
+      "status": "CREATED"
+    },
+    {
+      "key": "BasicConnectivity",
+      "name": "Basic Connectivity",
+      "noiseType": "AUTOMATIC",
+      "isDefault": false,
+      "criteria": [
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -75.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -80.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 16.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 11.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 3.0,
+          "additionalLimit": -80.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -75.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -80.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 16.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 11.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 1.0,
+          "additionalLimit": -80.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 500.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.1
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 500.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.1
+        }
+      ],
+      "id": "c1a06648-a989-4310-9cdd-c98645a3aa30",
+      "status": "CREATED"
+    },
+    {
+      "key": "ArubaVHD",
+      "name": "Aruba VHD Guideline",
+      "noiseType": "AUTOMATIC",
+      "isDefault": false,
+      "criteria": [
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -65.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -75.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 25.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 12.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 1.0,
+          "additionalLimit": -85.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -65.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -75.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 25.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 12.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 1.0,
+          "additionalLimit": -85.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 300.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.05
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 300.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.05
+        }
+      ],
+      "id": "4d2f896e-2cbb-4f52-8cf3-a0b916ab59d2",
+      "status": "CREATED"
+    },
+    {
+      "key": "DataVoIP",
+      "name": "Ekahau Best Practices",
+      "noiseType": "AUTOMATIC",
+      "isDefault": true,
+      "criteria": [
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -67.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 20.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 24.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 2.0,
+          "additionalLimit": -85.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -67.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -67.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 25.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 24.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 1.0,
+          "additionalLimit": -85.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 200.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 200.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.0
+        }
+      ],
+      "id": "034eaec7-ef06-42e2-ad7f-a971be97bd88",
+      "status": "CREATED"
+    },
+    {
+      "key": "HighSpeedConnectivity",
+      "name": "High Speed Connectivity",
+      "noiseType": "AUTOMATIC",
+      "isDefault": false,
+      "criteria": [
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -70.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -80.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 16.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 12.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 3.0,
+          "additionalLimit": -80.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -70.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -80.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 16.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 12.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 1.0,
+          "additionalLimit": -80.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 300.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.05
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 300.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.05
+        }
+      ],
+      "id": "84273a35-11d0-444c-8cde-c2f718d4aa9d",
+      "status": "CREATED"
+    },
+    {
+      "key": "VoiceCisco",
+      "name": "Cisco Design Guideline",
+      "noiseType": "AUTOMATIC",
+      "isDefault": false,
+      "criteria": [
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -65.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -75.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 25.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 12.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 1.0,
+          "additionalLimit": -86.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -65.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -75.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 25.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 12.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 1.0,
+          "additionalLimit": -86.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 300.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.02
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 300.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.02
+        }
+      ],
+      "id": "6215c465-ab80-4573-baf0-780afaa05be6",
+      "status": "CREATED"
+    },
+    {
+      "key": "VoiceLync",
+      "name": "Skype / Lync Guidelines",
+      "noiseType": "AUTOMATIC",
+      "isDefault": false,
+      "criteria": [
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -65.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -75.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 25.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 12.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 1.0,
+          "additionalLimit": -85.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -65.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SECONDARY_SIGNAL_STRENGTH",
+          "function": "AT_LEAST",
+          "value": -75.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "SIGNAL_TO_NOISE_RATIO",
+          "function": "AT_LEAST",
+          "value": 25.0,
+          "additionalLimit": 1.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "DATA_RATE",
+          "function": "AT_LEAST",
+          "value": 12.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "CHANNEL_OVERLAP",
+          "function": "AT_MOST",
+          "value": 1.0,
+          "additionalLimit": -85.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 200.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "TWO",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.02
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "PING_RTT",
+          "function": "AT_MOST",
+          "value": 200.0
+        },
+        {
+          "radioTechnology": "IEEE802_11",
+          "frequencyBand": "FIVE",
+          "type": "RELATIVE_PING_PACKET_LOSS",
+          "function": "AT_MOST",
+          "value": 0.02
+        }
+      ],
+      "id": "10b5d513-2294-452b-9fa5-38da0da14178",
+      "status": "CREATED"
+    }
+  ]
+}

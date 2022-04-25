@@ -1,0 +1,77 @@
+{
+  "projectHistorys": [
+    {
+      "parentIds": [],
+      "timestamp": "2022-04-18T11:59:43.760-04:00",
+      "projectId": "b640b1ce-9cbd-4f9b-a13e-265045790ca1",
+      "projectName": "Boreas - Bromont - 20220418",
+      "productName": "Ekahau Pro",
+      "productVersion": "10.4.0.345",
+      "schemaVersion": "1.5.0",
+      "operation": "LOCAL_SAVE",
+      "platform": "Windows 10 64-bit",
+      "id": "01d51b31-9c1c-4d2d-b73c-deb5dad31239",
+      "status": "CREATED"
+    },
+    {
+      "parentIds": [
+        "01d51b31-9c1c-4d2d-b73c-deb5dad31239"
+      ],
+      "timestamp": "2022-04-18T12:02:24.546-04:00",
+      "projectId": "b640b1ce-9cbd-4f9b-a13e-265045790ca1",
+      "projectName": "Boreas - Bromont - 20220418",
+      "productName": "Ekahau Pro",
+      "productVersion": "10.4.0.345",
+      "schemaVersion": "1.5.0",
+      "operation": "LOCAL_SAVE",
+      "platform": "Windows 10 64-bit",
+      "id": "55195d10-4fe1-4a0e-adf7-fbaf5a4b55c0",
+      "status": "CREATED"
+    },
+    {
+      "parentIds": [
+        "55195d10-4fe1-4a0e-adf7-fbaf5a4b55c0"
+      ],
+      "timestamp": "2022-04-18T12:02:45.104-04:00",
+      "projectId": "b640b1ce-9cbd-4f9b-a13e-265045790ca1",
+      "projectName": "Boreas - Bromont - 20220418",
+      "productName": "Ekahau Pro",
+      "productVersion": "10.4.0.345",
+      "schemaVersion": "1.5.0",
+      "operation": "LOCAL_SAVE",
+      "platform": "Windows 10 64-bit",
+      "id": "85bc4b15-beda-4521-89d2-82a442ead753",
+      "status": "CREATED"
+    },
+    {
+      "parentIds": [
+        "85bc4b15-beda-4521-89d2-82a442ead753"
+      ],
+      "timestamp": "2022-04-18T12:05:55.876-04:00",
+      "projectId": "b640b1ce-9cbd-4f9b-a13e-265045790ca1",
+      "projectName": "Boreas - Bromont - 20220418",
+      "productName": "Ekahau Pro",
+      "productVersion": "10.4.0.345",
+      "schemaVersion": "1.5.0",
+      "operation": "LOCAL_SAVE",
+      "platform": "Windows 10 64-bit",
+      "id": "2f59ac63-a8a8-495c-95e0-f51d40ec0693",
+      "status": "CREATED"
+    },
+    {
+      "parentIds": [
+        "2f59ac63-a8a8-495c-95e0-f51d40ec0693"
+      ],
+      "timestamp": "2022-04-18T13:26:07.825-04:00",
+      "projectId": "b640b1ce-9cbd-4f9b-a13e-265045790ca1",
+      "projectName": "Boreas - Bromont - 20220418",
+      "productName": "Ekahau Pro",
+      "productVersion": "10.4.0.345",
+      "schemaVersion": "1.5.0",
+      "operation": "LOCAL_SAVE",
+      "platform": "Windows 10 64-bit",
+      "id": "9496bdd5-4cf5-46d9-83f7-029680717490",
+      "status": "CREATED"
+    }
+  ]
+}

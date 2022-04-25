@@ -1,0 +1,185 @@
+{
+  "attenuationAreaTypes": [
+    {
+      "name": "Retail Shelf",
+      "key": "retail_shelf",
+      "color": "#00FA9A",
+      "propagationProperties": [
+        {
+          "band": "TWO",
+          "attenuationFactor": 5.0
+        },
+        {
+          "band": "FIVE",
+          "attenuationFactor": 5.0
+        },
+        {
+          "band": "SIX",
+          "attenuationFactor": 5.0
+        }
+      ],
+      "lowerEdge": 0.0,
+      "upperEdge": 1.5,
+      "id": "7d6afafe-3f7d-46a0-b058-e2781257926f",
+      "status": "CREATED"
+    },
+    {
+      "name": "Human crowd",
+      "key": "human_crowd",
+      "color": "#F79F81",
+      "propagationProperties": [
+        {
+          "band": "TWO",
+          "attenuationFactor": 3.0
+        },
+        {
+          "band": "FIVE",
+          "attenuationFactor": 3.0
+        },
+        {
+          "band": "SIX",
+          "attenuationFactor": 3.0
+        }
+      ],
+      "lowerEdge": 0.0,
+      "upperEdge": 1.75,
+      "id": "f0192a8a-edd1-42bc-a8ac-47fab7272b9d",
+      "status": "CREATED"
+    },
+    {
+      "name": "Warehouse Rack",
+      "key": "warehouse_rack",
+      "color": "#404040",
+      "propagationProperties": [
+        {
+          "band": "TWO",
+          "attenuationFactor": 18.0
+        },
+        {
+          "band": "FIVE",
+          "attenuationFactor": 18.0
+        },
+        {
+          "band": "SIX",
+          "attenuationFactor": 18.0
+        }
+      ],
+      "lowerEdge": 0.0,
+      "id": "00ae0193-882b-4711-a34a-6d65934e55d2",
+      "status": "CREATED"
+    },
+    {
+      "name": "Market Stall",
+      "key": "market_stall",
+      "color": "#B2E041",
+      "propagationProperties": [
+        {
+          "band": "TWO",
+          "attenuationFactor": 3.5
+        },
+        {
+          "band": "FIVE",
+          "attenuationFactor": 3.5
+        },
+        {
+          "band": "SIX",
+          "attenuationFactor": 3.5
+        }
+      ],
+      "lowerEdge": 0.0,
+      "upperEdge": 2.5,
+      "id": "7002739c-e0d5-42f6-bcfb-f3f876a0f9eb",
+      "status": "CREATED"
+    },
+    {
+      "name": "Elevator",
+      "key": "elevator",
+      "color": "#8E8E8E",
+      "propagationProperties": [
+        {
+          "band": "TWO",
+          "attenuationFactor": 17.0
+        },
+        {
+          "band": "FIVE",
+          "attenuationFactor": 17.0
+        },
+        {
+          "band": "SIX",
+          "attenuationFactor": 17.0
+        }
+      ],
+      "lowerEdge": 0.0,
+      "id": "cc58a499-c0a5-43de-b8e7-603591a5a2eb",
+      "status": "CREATED"
+    },
+    {
+      "name": "Cubicle",
+      "key": "cubicle-h1.5m",
+      "color": "#BEBEBE",
+      "propagationProperties": [
+        {
+          "band": "TWO",
+          "attenuationFactor": 3.0
+        },
+        {
+          "band": "FIVE",
+          "attenuationFactor": 3.0
+        },
+        {
+          "band": "SIX",
+          "attenuationFactor": 3.0
+        }
+      ],
+      "lowerEdge": 0.0,
+      "upperEdge": 1.2192,
+      "id": "1c1482f9-1c12-426d-a349-f540c89a33e6",
+      "status": "CREATED"
+    },
+    {
+      "name": "Cabling Closet",
+      "key": "cabling",
+      "color": "#FF00FF",
+      "propagationProperties": [
+        {
+          "band": "TWO",
+          "attenuationFactor": 7.0
+        },
+        {
+          "band": "FIVE",
+          "attenuationFactor": 7.0
+        },
+        {
+          "band": "SIX",
+          "attenuationFactor": 7.0
+        }
+      ],
+      "lowerEdge": 0.0,
+      "id": "e07743a9-c2e6-41de-a7e6-a357137af025",
+      "status": "CREATED"
+    },
+    {
+      "name": "Restaurant Seating",
+      "key": "restaurant_seating",
+      "color": "#948A54",
+      "propagationProperties": [
+        {
+          "band": "TWO",
+          "attenuationFactor": 3.0
+        },
+        {
+          "band": "FIVE",
+          "attenuationFactor": 3.0
+        },
+        {
+          "band": "SIX",
+          "attenuationFactor": 3.0
+        }
+      ],
+      "lowerEdge": 0.0,
+      "upperEdge": 1.5,
+      "id": "00b77f80-2017-4ce2-b93f-09b050903697",
+      "status": "CREATED"
+    }
+  ]
+}
