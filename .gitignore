@@ -1,6 +1,6 @@
 # Dossiers client
-clients
-project
+clients/
+project/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
