@@ -1,6 +1,7 @@
 # Dossiers client
 clients/
 project/
+BOM_AP.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
