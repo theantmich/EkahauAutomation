@@ -1,3 +1,4 @@
+import time
 import zipfile
 import json
 import argparse
@@ -31,7 +32,7 @@ def main():
     with open('project/floorPlans.json') as floor:
         floorJSON = json.load(floor)
     
-    with open('BOM_AP.csv', 'w', newline='') as file:
+    with open('BOM_AP.csv', 'w', newline='',encoding='utf-8') as file:
         writer = csv.writer(file)
         writer.writerow(["AP_NUMBER", "AP_NAME", "AP_FLOOR", "AP_VENDOR", "AP_MODEL", "AP_ANTENNA", "AP_HEIGHT (FT)", "AP_TILT", "AP_MOUNTING"])
         
@@ -46,7 +47,6 @@ def main():
                             
                             ap_height_meter = radio['antennaHeight']
                             ap_height_feet = round(ap_height_meter * 3.28084,2)
-                            #print(ap_height_feet,ap_height_meter)
                             
                             ap_tilt = radio['antennaTilt']
                             ap_mounting = radio['antennaMounting']
@@ -59,8 +59,6 @@ def main():
                             
                             ap_model = ap['model'][:plusPosition]
                             ap_antenna = ap['model'][plusPosition+3:]
-
-                            print(ap_model)
                             
                         else :
                             ap_model = ap['model']
@@ -80,4 +78,14 @@ def main():
                 ap_list.append(ap['name'])
                 #print(ap_list)
 
+
+
 main()
+
+
+if __name__ == "__main__":
+    start_time = time.time()
+    print('** Updating AP Model Names...\n')
+    main()
+    run_time = time.time() - start_time
+    print("\n** Time to run: %s sec" % round(run_time, 2))
