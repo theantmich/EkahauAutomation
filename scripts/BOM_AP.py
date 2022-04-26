@@ -8,18 +8,18 @@ def main():
 
     ap_list = []
 
-    #Lire les arguments fournis lors du lancement du script, c'est-à-dire le nom du fichier Esx.
+    #Read arguments, aka the ESX file.
     parser = argparse.ArgumentParser()
     parser.add_argument('file', metavar='esx_file', help='Ekahau project file')
     args = parser.parse_args()
     
     
     
-    #Extraire le contenu du fichier Esx
+    #Extract the content of the ESX file.
     with zipfile.ZipFile(args.file, 'r') as zip:
         zip.extractall('project')
         
-    #Ouvrir les fichiers JSON requis
+    #Open the required JSON files.
     with open('project/accessPoints.json') as ap:
         apJSON = json.load(ap)
         
@@ -32,17 +32,20 @@ def main():
     with open('project/floorPlans.json') as floor:
         floorJSON = json.load(floor)
     
+    #Create CSV file.
     with open('BOM_AP.csv', 'w', newline='',encoding='utf-8') as file:
         writer = csv.writer(file)
         writer.writerow(["AP_NUMBER", "AP_NAME", "AP_FLOOR", "AP_VENDOR", "AP_MODEL", "AP_ANTENNA", "AP_HEIGHT (FT)", "AP_TILT", "AP_MOUNTING"])
         
         ap_num = 0
         
+        #Assignation of variables (AP, antenna, height, angle, floor, mounting)
         for ap in apJSON['accessPoints']:
             for radio in sRadioJSON['simulatedRadios']:
                 for antenna in antennaJSON['antennaTypes']:
                     for floor in floorJSON['floorPlans']:
-                        # Obtention des informations des points d'acces (hauteur, angle et installation)
+
+                        #Get AP info (height, tilt, mounting)
                         if ap['id'] == radio['accessPointId']:
                             
                             ap_height_meter = radio['antennaHeight']
@@ -52,7 +55,7 @@ def main():
                             ap_mounting = radio['antennaMounting']
                             
 
-                        # Obtention du modele d'AP et d'antenne (interne/externe)
+                        #Get AP model and antenna (internal/external)
                         if "+" in ap['model']:
                             
                             plusPosition = ap['model'].index('+')
@@ -65,12 +68,12 @@ def main():
                             ap_antenna = "Internal Antenna"
 
 
-                        # Obtention du nom d'etage
+                        #Get floor name
                         if ap['location']['floorPlanId'] == floor['id']:
                             ap_floor = floor['name']
                             
 
-            #Ecriture des informations dans le document CSV           
+            #Write AP data in the CSV file.           
             if ap['name'] not in ap_list:
                 ap_num += 1
             
@@ -82,7 +85,7 @@ def main():
 
 main()
 
-
+#Adds runtime
 if __name__ == "__main__":
     start_time = time.time()
     print('** Updating AP Model Names...\n')
