@@ -52,16 +52,20 @@ def main():
                             ap_mounting = radio['antennaMounting']
                             
 
-                        # Obtention du modele d'antenne (interne/externe)
-                        if antenna['id'] == radio['antennaTypeId']:
-                        
-                            name_validation = antenna['apVendor'] + " " + antenna['apModel']
+                        # Obtention du modele d'AP et d'antenne (interne/externe)
+                        if "+" in ap['model']:
                             
-                            if name_validation in antenna['name']:
-                                ap_antenna = "Internal Antenna"
-                                
-                            else:
-                                ap_antenna = antenna['name']
+                            plusPosition = ap['model'].index('+')
+                            
+                            ap_model = ap['model'][:plusPosition]
+                            ap_antenna = ap['model'][plusPosition+3:]
+
+                            print(ap_model)
+                            
+                        else :
+                            ap_model = ap['model']
+                            ap_antenna = "Internal Antenna"
+
 
                         # Obtention du nom d'etage
                         if ap['location']['floorPlanId'] == floor['id']:
@@ -72,7 +76,7 @@ def main():
             if ap['name'] not in ap_list:
                 ap_num += 1
             
-                writer.writerow([ap_num, ap['name'], ap_floor, ap['vendor'], ap['model'], "Internal Antenna", ap_height_feet, ap_tilt, ap_mounting])
+                writer.writerow([ap_num, ap['name'], ap_floor, ap['vendor'], ap_model, ap_antenna, ap_height_feet, ap_tilt, ap_mounting])
                 ap_list.append(ap['name'])
                 #print(ap_list)
 
