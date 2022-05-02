@@ -13,8 +13,6 @@ def main():
     parser.add_argument('file', metavar='esx_file', help='Ekahau project file')
     args = parser.parse_args()
     
-    
-    
     #Extract the content of the ESX file.
     with zipfile.ZipFile(args.file, 'r') as zip:
         zip.extractall('project')
@@ -58,10 +56,15 @@ def main():
                         #Get AP model and antenna (internal/external)
                         if "+" in ap['model']:
                             
-                            plusPosition = ap['model'].index('+')
-                            
-                            ap_model = ap['model'][:plusPosition]
-                            ap_antenna = ap['model'][plusPosition+3:]
+                            if "2.4GHz + 5GHz" in ap['model']:
+                                ap_model = ap['model']
+                                ap_antenna = "Internal Antenna"
+
+                            else:
+                                plusPosition = ap['model'].index('+')
+                                
+                                ap_model = ap['model'][:plusPosition]
+                                ap_antenna = ap['model'][plusPosition+3:]
                             
                         else :
                             ap_model = ap['model']
