@@ -40,45 +40,53 @@ def main():
         #Assignation of variables (AP, antenna, height, angle, floor, mounting)
         for ap in apJSON['accessPoints']:
             for radio in sRadioJSON['simulatedRadios']:
+                #print(radio['status'])
+                #print(radio['accessPointId'])
+                
                 for antenna in antennaJSON['antennaTypes']:
                     for floor in floorJSON['floorPlans']:
 
-                        #Get AP info (height, tilt, mounting)
-                        if ap['id'] == radio['accessPointId']:
-                            
-                            ap_height_meter = radio['antennaHeight']
-                            ap_height_feet = round(ap_height_meter * 3.28084,2)
-                            
-                            ap_tilt = radio['antennaTilt']
-                            ap_mounting = radio['antennaMounting']
-                            
+                        #Verify if radio still exists
+                        if radio['status'] != "DELETED":
 
-                        #Get AP model and antenna (internal/external)
-                        if "+" in ap['model']:
-                            
-                            if "2.4GHz + 5GHz" in ap['model']:
-                                ap_model = ap['model']
-                                ap_antenna = "Internal Antenna"
+                            #Get AP info (height, tilt, mounting)
+                            if ap['id'] == radio['accessPointId']:
 
-                            else:
-                                plusPosition = ap['model'].index('+')
+                                ap_height_meter = radio['antennaHeight']
+                                ap_height_feet = round(ap_height_meter * 3.28084,2)
                                 
-                                ap_model = ap['model'][:plusPosition]
-                                ap_antenna = ap['model'][plusPosition+3:]
-                            
-                        else :
-                            ap_model = ap['model']
-                            ap_antenna = "Internal Antenna"
+                                ap_tilt = radio['antennaTilt']
+                                ap_mounting = radio['antennaMounting']
+                                
+                            #Verify if AP still exists
+                            if ap['status'] != "DELETED":
+                                #Get AP model and antenna (internal/external)
+                                if "+" in ap['model']:
+                                    
+                                    if "2.4GHz + 5GHz" in ap['model']:
+                                        ap_model = ap['model']
+                                        ap_antenna = "Internal Antenna"
+
+                                    else:
+                                        plusPosition = ap['model'].index('+')
+                                        
+                                        ap_model = ap['model'][:plusPosition]
+                                        ap_antenna = ap['model'][plusPosition+3:]
+                                    
+                                else :
+                                    ap_model = ap['model']
+                                    ap_antenna = "Internal Antenna"
 
 
-                        #Get floor name
-                        if ap['location']['floorPlanId'] == floor['id']:
-                            ap_floor = floor['name']
-                            
-
-            #Write AP data in the CSV file.           
-            if ap['name'] not in ap_list:
-                ap_num += 1
+                                #Get floor name
+                                if ap['location']['floorPlanId'] == floor['id']:
+                                    ap_floor = floor['name']
+                                
+            #Verify if AP still exists
+            if ap['status'] != "DELETED":
+                #Write AP data in the CSV file.           
+                if ap['name'] not in ap_list:
+                    ap_num += 1
             
                 writer.writerow([ap_num, ap['name'], ap_floor, ap['vendor'], ap_model, ap_antenna, ap_height_feet, ap_tilt, ap_mounting])
                 ap_list.append(ap['name'])
