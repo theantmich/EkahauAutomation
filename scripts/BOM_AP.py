@@ -3,9 +3,12 @@ import zipfile
 import json
 import argparse
 import csv
+import os
+import pandas as pd
 
 def main():
 
+    ### Preparation of variables, opening of JSON files from Ekahau
     ap_list = []
 
     #Read arguments, aka the ESX file.
@@ -13,6 +16,7 @@ def main():
     parser.add_argument('file', metavar='esx_file', help='Ekahau project file')
     args = parser.parse_args()
     
+
     #Extract the content of the ESX file.
     with zipfile.ZipFile(args.file, 'r') as zip:
         zip.extractall('project')
@@ -23,6 +27,9 @@ def main():
         
     with open('project/simulatedRadios.json') as sRadio:
         sRadioJSON = json.load(sRadio)
+
+    with open('project/measuredRadios.json') as mRadio:
+        mRadioJSON = json.load(mRadio)
         
     with open('project/antennaTypes.json') as antenna:
         antennaJSON = json.load(antenna)
@@ -30,6 +37,9 @@ def main():
     with open('project/floorPlans.json') as floor:
         floorJSON = json.load(floor)
     
+
+    ### Algorithm that goes through all access points and adds their information to a CSV file.
+
     #Create CSV file.
     with open('BOM_AP.csv', 'w', newline='',encoding='utf-8') as file:
         writer = csv.writer(file)
@@ -55,51 +65,78 @@ def main():
                                 ap_height_meter = radio['antennaHeight']
                                 ap_height_feet = round(ap_height_meter * 3.28084,2)
                                 
-                                ap_tilt = radio['antennaTilt']
+                                ap_tilt = str(radio['antennaTilt'])+'°'
                                 ap_mounting = radio['antennaMounting']
+
+                                if 'vendor' in ap:
+                                    ap_vendor = ap['vendor']
+                                else:
+                                    ap_vendor = "N/A"
+                            else:
+
+                                for mRadio in mRadioJSON['measuredRadios']:
+                                    
+                                    if ap['id'] == mRadio['accessPointId']:
+                                        ap_height_meter = radio['antennaHeight']
+                                        ap_height_feet = round(ap_height_meter * 3.28084,2)
+                                        
+                                        ap_tilt = str(radio['antennaTilt'])+'°'
+                                        ap_mounting = radio['antennaMounting']
+
+                                        if 'vendor' in ap:
+                                            ap_vendor = ap['vendor']
+                                        else:
+                                            ap_vendor = "N/A"
                                 
                             #Verify if AP still exists
                             if ap['status'] != "DELETED":
-                                #Get AP model and antenna (internal/external)
-                                if "+" in ap['model']:
-                                    
-                                    if "2.4GHz + 5GHz" in ap['model']:
+                                #Get AP model and antenna (internal/external). Model has to be present
+                                if 'model' in ap:
+                                    if "+" in ap['model']:
+                                        
+                                        if "2.4GHz + 5GHz" in ap['model']:
+                                            ap_model = ap['model']
+                                            ap_antenna = "Internal Antenna"
+
+                                        else:
+                                            plusPosition = ap['model'].index('+')
+                                            
+                                            ap_model = ap['model'][:plusPosition]
+                                            ap_antenna = ap['model'][plusPosition+3:]
+                                    else :
                                         ap_model = ap['model']
                                         ap_antenna = "Internal Antenna"
 
+                                    if floor['status'] != "DELETED":
+                                        #Get floor name, verify first if the AP is located on a floor
+                                        if 'location' in ap:
+                                            if ap['location']['floorPlanId'] == floor['id']:
+                                                ap_floor = floor['name']
                                     else:
-                                        plusPosition = ap['model'].index('+')
-                                        
-                                        ap_model = ap['model'][:plusPosition]
-                                        ap_antenna = ap['model'][plusPosition+3:]
-                                    
-                                else :
-                                    ap_model = ap['model']
-                                    ap_antenna = "Internal Antenna"
+                                        print("Deleted Floorplan")
+                            else:
+                                print("Deleted AP")
+                        else:
+                            print("Deleted Radio")
 
-
-                                #Get floor name
-                                if ap['location']['floorPlanId'] == floor['id']:
-                                    ap_floor = floor['name']
-                                
             #Verify if AP still exists
-            if ap['status'] != "DELETED":
+            if ap['status'] or radio['status'] or mRadio['status'] or floor['status'] != "DELETED":
                 #Write AP data in the CSV file.           
-                if ap['name'] not in ap_list:
+                if ap['id'] not in ap_list:
                     ap_num += 1
             
-                writer.writerow([ap_num, ap['name'], ap_floor, ap['vendor'], ap_model, ap_antenna, ap_height_feet, ap_tilt, ap_mounting])
-                ap_list.append(ap['name'])
-                #print(ap_list)
-
-
-
+                    writer.writerow([ap_num, ap['name'], ap_floor, ap_vendor, ap_model, ap_antenna, ap_height_feet, ap_tilt, ap_mounting, ap['id']])
+                    ap_list.append(ap['id'])
+                    print(ap['name'])
+                    
+                    #print(ap_list)
+                   
 main()
 
 #Adds runtime
 if __name__ == "__main__":
     start_time = time.time()
-    print('** Updating AP Model Names...\n')
+    print('** Finishing up... **\n')
     main()
     run_time = time.time() - start_time
     print("\n** Time to run: %s sec" % round(run_time, 2))
