@@ -92,7 +92,7 @@ def main():
                                     ap_height_meter = radio['antennaHeight']
                                     ap_height_feet = round(ap_height_meter * 3.28084,2)
                                     
-                                    ap_tilt = str(radio['antennaTilt'])+'°'
+                                    ap_tilt = str(radio['antennaTilt'])+'\u00B0'
                                     ap_mounting = radio['antennaMounting']
 
                                     if 'vendor' in ap:
@@ -107,7 +107,7 @@ def main():
                                             ap_height_meter = radio['antennaHeight']
                                             ap_height_feet = round(ap_height_meter * 3.28084,2)
                                             
-                                            ap_tilt = str(radio['antennaTilt'])+'°'
+                                            ap_tilt = str(radio['antennaTilt'])+'\u00B0'
                                             ap_mounting = radio['antennaMounting']
 
                                             if 'vendor' in ap:
@@ -176,7 +176,7 @@ def main():
                                     ap_height_meter = radio['antennaHeight']
                                     ap_height_feet = round(ap_height_meter * 3.28084,2)
                                     
-                                    ap_tilt = str(radio['antennaTilt'])+'°'
+                                    ap_tilt = str(radio['antennaTilt'])+'\u00B0'
                                     ap_mounting = radio['antennaMounting']
 
                                     if 'vendor' in ap:
@@ -245,7 +245,7 @@ def main():
                                     ap_height_meter = radio['antennaHeight']
                                     ap_height_feet = round(ap_height_meter * 3.28084,2)
                                     
-                                    ap_tilt = str(radio['antennaTilt'])+'°'
+                                    ap_tilt = str(radio['antennaTilt'])+'\u00B0'
                                     ap_mounting = radio['antennaMounting']
 
                                     if 'vendor' in ap:
