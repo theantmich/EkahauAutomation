@@ -5,8 +5,7 @@ import json
 import argparse
 import csv
 import os
-import pandas as pd
-import sys, getopt
+import sys
 
 def main():
 
@@ -21,15 +20,11 @@ def main():
     parser.add_argument('-s', help='For Simulated Ekahau project files')
     parser.add_argument('-y', help='For Hybrid Ekahau project files')
 
-    opts = [opt for opt in sys.argv[1:] if opt.startswith("-")]
-
-    #print('Number of arguments:', len(opts), 'options.')
-    print('Argument List:', str(sys.argv))
-
     parser.add_argument('file', metavar='esx_file', help='Ekahau project file')
     args = parser.parse_args()
-    print(args)
+    #print(args)
 
+    #Tests out which argument was entered to define the type of survey.
     if sys.argv[1] == '-m':
         surveyType = "measured"
     elif sys.argv[1] == '-s':
@@ -37,9 +32,9 @@ def main():
     elif sys.argv[1] == '-y':
         surveyType = "hybrid"
     else:
-        raise SystemExit(f"Usage: {sys.argv[0]} (-m | -s | -y) <arguments>...")
+        raise SystemExit(f"Usage: {sys.argv[0]} (-m | -s | -y) file ekahauProject.esx")
     
-    print(sys.argv[1], surveyType)
+    #print(sys.argv[1], surveyType)
 
     #Extract the content of the ESX file.
     with zipfile.ZipFile(args.file, 'r') as zip:
@@ -73,6 +68,9 @@ def main():
         
         ap_num = 0
         
+        #Depending of the Survey type, extracts data from different files and writes it to a CSV.
+        #Survey types are Hybrid, Simulated and Measured
+
         if surveyType == "hybrid":
             #Assignation of variables (AP, antenna, height, angle, floor, mounting)
             for ap in apJSON['accessPoints']:

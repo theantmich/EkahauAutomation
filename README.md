@@ -19,7 +19,7 @@ HOW TO USE :
 
 1. Git clone this repo or download it
 2. Open a shell (Linux or Windows)
-3. Use the command : python3 /path/to/script/BOM_AP.py [ -s | -m | -y ] /path/to/your/esx/file.esx
+3. Use the command : python3 /path/to/script/BOM_AP.py [ -s | -m | -y ] file /path/to/your/esx/file.esx
 
 Options -s/-m/-y are mandatory. Use them to define what kind of Ekahau file you are using the script for.
 
