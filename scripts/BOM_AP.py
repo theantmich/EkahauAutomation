@@ -44,17 +44,25 @@ def main():
     with open('project/accessPoints.json') as ap:
         apJSON = json.load(ap)
         
-    if surveyType == "simulated" or "hybrid":
+    if surveyType == "simulated":
         with open('project/simulatedRadios.json') as sRadio:
             sRadioJSON = json.load(sRadio)
+        with open('project/antennaTypes.json') as antenna:
+            antennaJSON = json.load(antenna)
 
-    elif surveyType == "measured" or "hybrid":
+    elif surveyType == "measured":
         with open('project/measuredRadios.json') as mRadio:
             mRadioJSON = json.load(mRadio)
-        
-    with open('project/antennaTypes.json') as antenna:
-        antennaJSON = json.load(antenna)
 
+    elif surveyType == "hybrid":
+        with open('project/measuredRadios.json') as mRadio:
+            mRadioJSON = json.load(mRadio)
+        with open('project/simulatedRadios.json') as sRadio:
+            sRadioJSON = json.load(sRadio)
+        with open('project/antennaTypes.json') as antenna:
+            antennaJSON = json.load(antenna)
+        
+    
     with open('project/floorPlans.json') as floor:
         floorJSON = json.load(floor)
     
@@ -112,7 +120,7 @@ def main():
                                                 ap_vendor = ap['vendor']
                                             else:
                                                 ap_vendor = "N/A"
-                                    
+                                                
                                 #Verify if AP still exists
                                 if ap['status'] != "DELETED":
                                     #Get AP model and antenna (internal/external). Model has to be present
@@ -227,60 +235,70 @@ def main():
 
         elif surveyType == "measured":
             for ap in apJSON['accessPoints']:
-                for radio in mRadioJSON['measuredRadio']:
+                for radio in mRadioJSON['measuredRadios']:
                     #print(radio['status'])
                     #print(radio['accessPointId'])
                     
-                    for antenna in antennaJSON['antennaTypes']:
-                        for floor in floorJSON['floorPlans']:
+                    for floor in floorJSON['floorPlans']:
 
-                            #Verify if radio still exists
-                            if radio['status'] != "DELETED":
+                        #Verify if radio still exists
+                        if radio['status'] != "DELETED":
 
-                                #Get AP info (height, tilt, mounting)
-                                if ap['id'] == radio['accessPointId']:
+                            #Get AP info (height, tilt, mounting)
+                            if ap['id'] == radio['accessPointId']:
 
-                                    ap_height_meter = radio['antennaHeight']
-                                    ap_height_feet = round(ap_height_meter * 3.28084,2)
-                                    
-                                    ap_tilt = str(radio['antennaTilt'])+'\u00B0'
-                                    ap_mounting = radio['antennaMounting']
+                                ap_height_meter = "N/A"
+                                ap_height_feet = "N/A"
+                                
+                                ap_tilt = "N/A"
+                                ap_mounting = "N/A"
 
-                                    if 'vendor' in ap:
-                                        ap_vendor = ap['vendor']
-                                    else:
-                                        ap_vendor = "N/A"
-                                                                    
-                                #Verify if AP still exists
-                                if ap['status'] != "DELETED":
-                                    #Get AP model and antenna (internal/external). Model has to be present
-                                    if 'model' in ap:
-                                        if "+" in ap['model']:
-                                            
-                                            if "2.4GHz + 5GHz" in ap['model']:
-                                                ap_model = ap['model']
-                                                ap_antenna = "Internal Antenna"
-
-                                            else:
-                                                plusPosition = ap['model'].index('+')
-                                                
-                                                ap_model = ap['model'][:plusPosition]
-                                                ap_antenna = ap['model'][plusPosition+3:]
-                                        else :
+                                if 'vendor' in ap:
+                                    ap_vendor = ap['vendor']
+                                else:
+                                    ap_vendor = "N/A"
+                                                                
+                            #Verify if AP still exists
+                            if ap['status'] != "DELETED":
+                                #Get AP model and antenna (internal/external). Model has to be present
+                                if 'model' in ap:
+                                    if "+" in ap['model']:
+                                        
+                                        if "2.4GHz + 5GHz" in ap['model']:
                                             ap_model = ap['model']
                                             ap_antenna = "Internal Antenna"
 
-                                        if floor['status'] != "DELETED":
-                                            #Get floor name, verify first if the AP is located on a floor
-                                            if 'location' in ap:
-                                                if ap['location']['floorPlanId'] == floor['id']:
-                                                    ap_floor = floor['name']
                                         else:
-                                            print("Deleted Floorplan")
-                                else:
-                                    print("Deleted AP")
+                                            plusPosition = ap['model'].index('+')
+                                            
+                                            ap_model = ap['model'][:plusPosition]
+                                            ap_antenna = ap['model'][plusPosition+3:]
+                                    else :
+                                        ap_model = ap['model']
+                                        ap_antenna = "Internal Antenna"
+
+                                    if floor['status'] != "DELETED":
+                                        #Get floor name, verify first if the AP is located on a floor
+                                        
+                                        if 'location' in ap:
+                                            #print(floor['id'],ap['location']['floorPlanId'])
+                                            if ap['location']['floorPlanId'] == floor['id']:
+                                                #print(ap['name'], "ID", floor['id'], "FLOOR", floor['name'])
+                                                ap_floor = floor['name']
+                                            else:
+                                                #ap_floor = "woobdywoop"
+                                                print(ap['name'], "ID", floor['id'], "FLOOR", floor['name'])
+                                        else:
+                                            ap_floor = "N/A"
+                                            
+
+
+                                    else:
+                                        print("Deleted Floorplan")
                             else:
-                                print("Deleted Radio")
+                                print("Deleted AP")
+                        else:
+                            print("Deleted Radio")
 
                 #Verify if AP still exists
                 if ap['status'] or radio['status'] or mRadio['status'] or floor['status'] != "DELETED":
