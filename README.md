@@ -30,15 +30,9 @@ Options -s/-m/-y are mandatory. Use them to define what kind of Ekahau file you 
 QoL tip : cd to the directory where you want to CSV file to end up before using the python command. The BOM is generated in the current directory, as well as the extracted esx archive. I recommend the following file structure :
 
 - Parent Directory/
-    |
-    ---> scripts/
-    |    |
-    |    ---> BOM_AP.py
-    |
-    |
+    L--> scripts/
+         L--> BOM_AP.py
     L--> customers/
-         |
          L--> cust.1/ <===== /!\ CD HERE /!\
-            |
-            L--> BOM.csv
-            L--> Ekahau_Extracted_Archive/
+              L--> BOM.csv
+              L--> Ekahau_Extracted_Archive/
