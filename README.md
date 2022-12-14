@@ -103,7 +103,7 @@ QoL tip : cd to the directory where you want to CSV file to end up before using 
       <li>customers/</li>
         <ul>
           <li>customer1 <===== /!\ CD HERE /!\</li>
-               <ul>scripts/
+               <ul>
                     <li>BOM.csv</li>
                     <li>Ekahau_Extracted_Archive/</li>
                </ul>
