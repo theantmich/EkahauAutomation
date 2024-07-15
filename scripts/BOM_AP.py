@@ -172,13 +172,11 @@ def main():
                     
                     for antenna in antennaJSON['antennaTypes']:
                         for floor in floorJSON['floorPlans']:
-
                             #Verify if radio still exists
                             if radio['status'] != "DELETED":
 
                                 #Get AP info (height, tilt, mounting)
                                 if ap['id'] == radio['accessPointId']:
-
                                     ap_height_meter = radio['antennaHeight']
                                     ap_height_feet = round(ap_height_meter * 3.28084,2)
                                     
@@ -213,13 +211,21 @@ def main():
                                             #Get floor name, verify first if the AP is located on a floor
                                             if 'location' in ap:
                                                 if ap['location']['floorPlanId'] == floor['id']:
+                                                    print(ap, floor['name'])
                                                     ap_floor = floor['name']
+                                                else:
+                                                    ap_floor = "no floor"
                                         else:
                                             print("Deleted Floorplan")
+                                            ap_floor = "no floor"
+                                    else:
+                                        ap_floor = "no floor"
                                 else:
                                     print("Deleted AP")
+                                    ap_floor = "no floor"
                             else:
                                 print("Deleted Radio")
+                                ap_floor = "no floor"
 
                 #Verify if AP still exists
                 if ap['status'] or radio['status'] or mRadio['status'] or floor['status'] != "DELETED":
